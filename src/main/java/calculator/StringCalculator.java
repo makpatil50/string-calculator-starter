@@ -19,7 +19,9 @@ class StringCalculator {
     private int getSum(String[] numbers)  {
     	int sum = 0;
     	for(int index = 0; index < numbers.length;index++) {
-    		sum = stringToInt(numbers[index]) + sum;
+    		if(stringToInt(numbers[index])<=1000) {
+    			sum = Integer.parseInt(numbers[index]) + sum;
+    		}
     		
     	}
     	
