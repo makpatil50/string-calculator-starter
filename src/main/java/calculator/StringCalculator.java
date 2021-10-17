@@ -19,11 +19,19 @@ class StringCalculator {
     private int getSum(String[] numbers)  {
     	int sum = 0;
     	for(int index = 0; index < numbers.length;index++) {
-    		sum = Integer.parseInt(numbers[index]) + sum;
+    		sum = stringToInt(numbers[index]) + sum;
     		
     	}
     	
     	return sum;
+    }
+    private int stringToInt(String number) {
+        int num = Integer.parseInt(number);
+        if (num < 0) {
+            throw new IllegalArgumentException("Negative no not allowed");
+        } else {
+            return num;
+        }
     }
 
 }
